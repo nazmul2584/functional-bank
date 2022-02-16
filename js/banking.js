@@ -5,7 +5,7 @@
 
 // const first = dibblit(5);
 // const second = dibblit(7);
-
+// ............................................................1st funcion
 function getinput(num){
     const inputfild = document.getElementById(num);
      const inputfildtext = inputfild.value;
@@ -15,6 +15,13 @@ function getinput(num){
     inputfild.value = '';
     return inputfildfigur;
    
+}
+// .......................................................2nd function
+function updedtotalfild(totl,inputfildfigur){
+    const deposittotal = document.getElementById(totl);
+    const depositefildtext = deposittotal.innerText ;
+    const depositefildfigur = parseFloat(depositefildtext);
+    deposittotal.innerText = depositefildfigur + inputfildfigur;
 }
 
 
@@ -30,11 +37,13 @@ document.getElementById('diposite-button').addEventListener('click',function(){
 
     // get current deposite
 
-    const deposittotal = document.getElementById('deposite-total');
-    const depositefildtext = deposittotal.innerText ;
-    const depositefildfigur = parseFloat(depositefildtext);
-    deposittotal.innerText = depositefildfigur + inputfildfigur;
-    console.log(depositefildtext);
+    // const deposittotal = document.getElementById('deposite-total');
+    // const depositefildtext = deposittotal.innerText ;
+    // const depositefildfigur = parseFloat(depositefildtext);
+    // deposittotal.innerText = depositefildfigur + inputfildfigur;
+    // // console.log(depositefildtext);
+
+    updedtotalfild ('deposite-total',inputfildfigur);
 
     // add deposite with total balance
 
@@ -57,12 +66,13 @@ document.getElementById('widthrow-button').addEventListener('click',function(){
     const widthrwfildfigur = getinput('widthrow-input')
 
     //withrow sowen fild
-    const currentwidthraw = document.getElementById('withdraw');
-    const currentwidthrawtext = currentwidthraw.innerText;
-    console.log(currentwidthrawtext)
-     const currentwidthrawfigur = parseFloat(currentwidthrawtext);
-     currentwidthraw.innerText = currentwidthrawfigur + widthrwfildfigur;
+    // const currentwidthraw = document.getElementById('withdraw');
+    // const currentwidthrawtext = currentwidthraw.innerText;
+    // console.log(currentwidthrawtext)
+    //  const currentwidthrawfigur = parseFloat(currentwidthrawtext);
+    //  currentwidthraw.innerText = currentwidthrawfigur + widthrwfildfigur;
 
+    updedtotalfild ('withdraw',widthrwfildfigur);
     // balance handeler
 
     const balance = document.getElementById('balanc-total')
@@ -72,7 +82,7 @@ document.getElementById('widthrow-button').addEventListener('click',function(){
     balance.innerText = balancetfigure - widthrwfildfigur;
 
      // withdraw fild clear
-     widthrwfild.value = '';
+     widthrwfild.value ='';
 
 
 })
